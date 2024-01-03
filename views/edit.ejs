@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
+    <h3>Editing Food</h3>
+    <form method="POST" action="/admin/<%= food._id %>?_method=PUT">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" value="<%= food.title %>">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control"><%= food.description %></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input name="listing[image]" placeholder="enter image URL/Link" type="text" class="form-control" value="<%= food.image %>">
+        </div>
+    
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="1200" type="number" class="form-control" value="<%= food.price %>">
+        </div>
+            
+        <br><br>
+            <button class="btn btn-dark add-btn">edit</button>
+        <br><br>
+    </form>
+        </div>
+    </div>
+</body>
+</html>
